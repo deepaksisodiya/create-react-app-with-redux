@@ -7,7 +7,6 @@ import {createStore, combineReducers, applyMiddleware} from 'redux';
 import logger from 'redux-logger';
 
 import CounterReducer from './../modules/counter';
-
 import UserReducer from './../modules/user';
 
 let rootReducer = combineReducers({
@@ -16,9 +15,5 @@ let rootReducer = combineReducers({
 });
 
 let store = createStore(rootReducer, {}, applyMiddleware(logger()));
-
-store.subscribe(() => {
-  //console.log('state ', store.getState());
-});
 
 export default store;

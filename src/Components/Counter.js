@@ -10,6 +10,7 @@ class Counter extends Component {
   render() {
     return (
       <div>
+        <h2>Create React App With Redux</h2>
         <div>{this.props.counter}</div>
         <button onClick={() => this.props.onIncrement()}>Increment</button>
         <button onClick={() => this.props.onDecrement()}>Decrement</button>
