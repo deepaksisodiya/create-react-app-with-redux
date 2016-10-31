@@ -14,6 +14,10 @@ let rootReducer = combineReducers({
   UserReducer,
 });
 
-let store = createStore(rootReducer, {}, applyMiddleware(logger()));
+let store = createStore(
+  rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  applyMiddleware(logger())
+);
 
 export default store;
