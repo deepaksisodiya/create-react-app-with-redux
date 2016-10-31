@@ -1,14 +1,9 @@
-/*
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
-*/
+import {Provider} from 'react-redux';
 
 console.log('here');
 
@@ -71,28 +66,9 @@ store.subscribe(() => {
   //console.log('state ', store.getState());
 });
 
-store.dispatch({
-  type: 'INCREMENT',
-});
-
-store.dispatch({
-  type: 'INCREMENT',
-});
-
-store.dispatch({
-  type: 'DECREMENT',
-});
-
-store.dispatch({
-  type: 'SET_NAME',
-  payload: {
-    name:'chetan',
-  }
-});
-
-store.dispatch({
-  type: 'SET_AGE',
-  payload: {
-    age:12,
-  }
-});
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);
